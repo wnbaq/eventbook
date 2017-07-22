@@ -20,14 +20,14 @@ public class KullaniciControllerServlet extends HttpServlet {
 
 		String userName = request.getParameter("name");
 		String surname = request.getParameter("surname");
-		String password = request.getParameter("password1");
+		String password = request.getParameter("password");
 		String email = request.getParameter("email");
 
 		HttpSession session = request.getSession(true);
 		try {
 			KullaniciDAO userDAO = new KullaniciDAO();
 			userDAO.addUserDetails(userName, surname, password, email);
-			response.sendRedirect("Success");
+			response.sendRedirect("signup");
 		} catch (Exception e) {
 
 			e.printStackTrace();
