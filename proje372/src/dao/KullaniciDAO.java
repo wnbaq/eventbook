@@ -62,8 +62,10 @@ public class KullaniciDAO {
 
 		List<Kullanici> kullanicilar = session.createQuery("select k from Kullanici k", Kullanici.class)
 				.getResultList();
-
-		return kullanicilar.get(kullanicilar.size() - 1).getid();
+		if(kullanicilar.isEmpty())
+			return -1;
+		else
+			return kullanicilar.get(kullanicilar.size() - 1).getid();
 	}
 
 }
