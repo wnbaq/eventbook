@@ -9,7 +9,7 @@
 <title>Registration Form</title>
 </head>
 <body>
-	<h1>Registration Form</h1>
+	<h1>WELCOME TO EVENTBOOK</h1>
 	<form action="register" method="post">
 		<table cellpadding="3pt">
 			<tr>
