@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,13 +22,24 @@ public class KullaniciControllerServlet extends HttpServlet {
 		String userName = request.getParameter("name");
 		String surname = request.getParameter("surname");
 		String password = request.getParameter("password");
+		String password1 = request.getParameter("password1");
 		String email = request.getParameter("email");
 
 		HttpSession session = request.getSession(true);
 		try {
-			KullaniciDAO userDAO = new KullaniciDAO();
-			userDAO.addUserDetails(userName, surname, password, email);
-			response.sendRedirect("signup");
+			if(password.equals(password1)){
+				KullaniciDAO userDAO = new KullaniciDAO();
+				userDAO.addUserDetails(userName, surname, password, email);
+				response.sendRedirect("signup");
+			}
+			else {
+				PrintWriter writer = response.getWriter();
+				writer.println("<html>" + "<body bgcolor='cyan'>" + "<center>"
+						+ "Details not Added Successfully" + "</center>" + "</body>"
+						+ "</html>");
+			}
+
+			
 		} catch (Exception e) {
 
 			e.printStackTrace();
