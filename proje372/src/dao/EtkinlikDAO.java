@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -17,8 +18,8 @@ import bean.Kullanici;
 public class EtkinlikDAO {
 
 
-	private static void createEtkinlik(int id, String etkinlikIsmi, String baslangicZamani, String bitisZamani,
-			String yasAraligi) {
+	public  void createEtkinlik(String etkinlikIsmi, Date baslangicZamani, Date bitisZamani,
+			String yasAraligi, String email) {
 		try {
 			// 1. configuring hibernate
 			Configuration configuration = new Configuration().configure();
@@ -32,11 +33,13 @@ public class EtkinlikDAO {
 			// 4. Starting Transaction
 			Transaction transaction = session.beginTransaction();
 			Etkinlik etkinlik = new Etkinlik();
-			etkinlik.setEid(id);
+			int id = getLastIndex() + 1;
+			etkinlik.setid(id);
 			etkinlik.setEtkinlikIsmi(etkinlikIsmi);
 			etkinlik.setBaslangicZamani(baslangicZamani);
 			etkinlik.setBitisZamani(bitisZamani);
 			etkinlik.setYasAraligi(yasAraligi);
+			etkinlik.setEmail(email);
 			session.save(etkinlik);
 			transaction.commit();
 		
@@ -46,6 +49,26 @@ public class EtkinlikDAO {
 			System.out.println("error");
 		}
 
+	}
+	private static int getLastIndex() {
+		// 1. configuring hibernate
+		Configuration configuration = new Configuration().configure();
+
+		// 2. create sessionfactory
+		SessionFactory sessionFactory = configuration.buildSessionFactory();
+
+		// 3. Get Session object
+		Session session = sessionFactory.openSession();
+
+		// 4. Starting Transaction
+		Transaction transaction = session.beginTransaction();
+
+		List<Etkinlik> etkinlikler = session.createQuery("select k from Kullanici k", Etkinlik.class)
+				.getResultList();
+		if (etkinlikler.isEmpty())
+			return -1;
+		else
+			return etkinlikler.get(etkinlikler.size() - 1).getid();
 	}
 
 //	private static void listEtkinlik() {

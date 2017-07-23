@@ -27,17 +27,17 @@ public class KullaniciControllerServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 		try {
-			if(password.equals(password1)){
+		//	if(password.equals(password1)&& !password.equals(null)){
 				KullaniciDAO userDAO = new KullaniciDAO();
 				userDAO.addUserDetails(userName, surname, password, email);
-				response.sendRedirect("signup");
-			}
-			else {
-				PrintWriter writer = response.getWriter();
-				writer.println("<html>" + "<body bgcolor='cyan'>" + "<center>"
-						+ "Details not Added Successfully" + "</center>" + "</body>"
-						+ "</html>");
-			}
+				response.sendRedirect("etkinlikRegister.html");
+//			}
+//			else {
+//				PrintWriter writer = response.getWriter();
+//				writer.println("<html>" + "<center>"
+//						+ "Details not Added Successfully" + "</center>" + "</body>"
+//						+ "</html>");
+//			}
 
 			
 		} catch (Exception e) {

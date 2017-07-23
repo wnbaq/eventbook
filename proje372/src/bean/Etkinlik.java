@@ -1,37 +1,38 @@
 package bean;
 
+import java.util.Date;
 import java.util.Set;
 
 public class Etkinlik {
-	private int eid;
-	private String baslangicZamani;
-	private String bitisZamani;
+	private int id;
+	private Date baslangicZamani;
+	private Date bitisZamani;
 	private String yasAraligi;
 	private String email;
 	private Set<Mekan> mekanlar;
 	private String etkinlikIsmi;
 
-	public int getEid() {
-		return eid;
+	public int getid() {
+		return id;
 	}
 
-	public void setEid(int eid) {
-		this.eid = eid;
+	public void setid(int id) {
+		this.id = id;
 	}
 
-	public String getBaslangicZamani() {
+	public Date getBaslangicZamani() {
 		return baslangicZamani;
 	}
 
-	public void setBaslangicZamani(String baslangicZamani) {
+	public void setBaslangicZamani(Date baslangicZamani) {
 		this.baslangicZamani = baslangicZamani;
 	}
 
-	public String getBitisZamani() {
+	public Date getBitisZamani() {
 		return bitisZamani;
 	}
 
-	public void setBitisZamani(String bitisZamani) {
+	public void setBitisZamani(Date bitisZamani) {
 		this.bitisZamani = bitisZamani;
 	}
 

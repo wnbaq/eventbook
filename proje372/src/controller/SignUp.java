@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name="SignUp",urlPatterns={"/signup"})
+@WebServlet(name="eventRegister",urlPatterns={"/eventRegister"})
 public class SignUp extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 	
-		RequestDispatcher rs = request.getRequestDispatcher("/WEB-INF/signup.html");
+		RequestDispatcher rs = request.getRequestDispatcher("/WEB-INF/eventRegister.html");
 		rs.include(request,response);
 	}
 
