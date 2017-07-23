@@ -8,11 +8,13 @@
 		<display-name>Kullanici</display-name>
 		<servlet-name>Kullanici</servlet-name>
 		<servlet-class>controller.KullaniciControllerServlet</servlet-class>
+		 <load-on-startup>1</load-on-startup>
 	</servlet>
 		<servlet>
 		<display-name>Etkinlik</display-name>
 		<servlet-name>Etkinlik</servlet-name>
 		<servlet-class>controller.EtkinlikControllerServlet</servlet-class>
+		 <load-on-startup>2</load-on-startup>
 	</servlet>
 	<servlet>
 		<display-name>SignUp</display-name>

@@ -43,7 +43,7 @@ public class EtkinlikControllerServlet extends HttpServlet {
 				System.out.println("------olmadi" +el);
 			}
 			
-			request.getRequestDispatcher("register.html").forward(request, response);
+			//request.getRequestDispatcher("register.html").forward(request, response);
 		} catch (Exception e) {
 
 			e.printStackTrace();

@@ -63,7 +63,7 @@ public class EtkinlikDAO {
 		// 4. Starting Transaction
 		Transaction transaction = session.beginTransaction();
 
-		List<Etkinlik> etkinlikler = session.createQuery("select k from Kullanici k", Etkinlik.class)
+		List<Etkinlik> etkinlikler = session.createQuery("select k from Etkinlik k", Etkinlik.class)
 				.getResultList();
 		if (etkinlikler.isEmpty())
 			return -1;

@@ -1,2 +1,7 @@
 /controller/
 /dao/
+/kullanici.hbm.xml
+/maps/
+/bean/
+/etkinlik.hbm.xml
+/hibernate.cfg.xml
