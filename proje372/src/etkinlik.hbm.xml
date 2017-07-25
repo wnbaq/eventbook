@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="bean.Etkinlik" table="ETKINLIK">
-		<id column="ID" name="id" type="java.lang.Integer" />
-		<property column="BASLANGICZAMANI" name="baslangicZamani" type="java.util.Date" />
-		<property column="BITISZAMANI" name="bitisZamani" type="java.util.Date" />
-		<property column="YASARALIGI" name="yasAraligi" type="java.lang.String" />
+		<id column="e_id" name="id" type="java.lang.Integer" />
+		<property column="baslangic_zamani" name="baslangicZamani" type="java.util.Date" />
+		<property column="bitis_zamani" name="bitisZamani" type="java.util.Date" />
+		<property column="yas_araligi" name="yasAraligi" type="java.lang.String" />
 		<property column="EMAIL" name="email" type="java.lang.String" />
-		<property column="ISMI" name="etkinlikIsmi" type="java.lang.String" />
-
+		<property column="etkinlik_ismi" name="etkinlikIsmi" type="java.lang.String" />
+		<property column="type" name="type" type="java.lang.String" />
 	</class>
 </hibernate-mapping>

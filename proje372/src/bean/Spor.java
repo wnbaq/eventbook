@@ -1,25 +1,18 @@
 package bean;
 
 import java.util.Date;
-import java.util.Set;
 
-public class Etkinlik {
-	private int id;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "spor")
+public class Spor extends Etkinlik {
 	private Date baslangicZamani;
 	private Date bitisZamani;
 	private String yasAraligi;
-	public String email;
-	private Set<Mekan> mekanlar;
-	private String etkinlikIsmi;
-	private String type;
-	public int getid() {
-		return id;
-	}
+	private String email;
 
-	public void setid(int id) {
-		this.id = id;
-	}
-
+	@Column
 	public Date getBaslangicZamani() {
 		return baslangicZamani;
 	}
@@ -28,6 +21,7 @@ public class Etkinlik {
 		this.baslangicZamani = baslangicZamani;
 	}
 
+	@Column
 	public Date getBitisZamani() {
 		return bitisZamani;
 	}
@@ -36,6 +30,7 @@ public class Etkinlik {
 		this.bitisZamani = bitisZamani;
 	}
 
+	@Column
 	public String getYasAraligi() {
 		return yasAraligi;
 	}
@@ -44,6 +39,7 @@ public class Etkinlik {
 		this.yasAraligi = yasAraligi;
 	}
 
+	@Column
 	public String getEmail() {
 		return email;
 	}
@@ -51,31 +47,5 @@ public class Etkinlik {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getEtkinlikIsmi() {
-		return etkinlikIsmi;
-	}
-
-	public void setEtkinlikIsmi(String etkinlikIsmi) {
-		this.etkinlikIsmi = etkinlikIsmi;
-	}
-
-	public Set<Mekan> getMekanlar() {
-		return mekanlar;
-	}
-
-	public void setMekanlar(Set<Mekan> mekanlar) {
-		this.mekanlar = mekanlar;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-
 
 }

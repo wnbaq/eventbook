@@ -30,7 +30,10 @@ public class KullaniciControllerServlet extends HttpServlet {
 		//	if(password.equals(password1)&& !password.equals(null)){
 				KullaniciDAO userDAO = new KullaniciDAO();
 				userDAO.addUserDetails(userName, surname, password, email);
+				String shared = "shared";
+		    	request.setAttribute("sharedId", shared);
 				response.sendRedirect("etkinlikRegister.html");
+				
 //			}
 //			else {
 //				PrintWriter writer = response.getWriter();

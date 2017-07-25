@@ -6,12 +6,16 @@
 <title>Registration Form</title>
 </head>
 <body>
-	<h1>WELCOME TO EVENTBOOK</h1>
-	<form action="etkinlikRegister" method="post">
+	<h1>Create Your Event!</h1>
+	<form action="Save" method="post">
 		<table cellpadding="3pt">
 			<tr>
 				<td>Event Name :</td>
 				<td><input type="text" name="etkinlikIsmi" size="30" /></td>
+			</tr>
+			<tr>
+				<td>Type:</td>
+				<td><input type="text" name="type" size="30" /></td>
 			</tr>
 			<tr>
 				<td>Start Time :</td>
@@ -33,7 +37,7 @@
 
 		</table>
 		<p />
-		<input type="submit" value="etkinlikRegister" />
+		<input type="submit" value="Save" />
 	</form>
 </body>
 </html>
