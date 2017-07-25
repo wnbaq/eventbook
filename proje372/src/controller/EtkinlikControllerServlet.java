@@ -11,15 +11,14 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Etkinlik;
 import dao.EtkinlikDAO;
-import dao.KullaniciDAO;
-
+@WebServlet("/Etkinlik")
 public class EtkinlikControllerServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -44,9 +43,7 @@ public class EtkinlikControllerServlet extends HttpServlet {
 				sdate=df.parse(startTime);
 				fdate=df.parse(finishTime);
 				eventDAO.createEtkinlik(etkinlikIsmi, sdate, fdate, ageRange, email, tur);
-			   	RequestDispatcher dispatcher = request
-		                .getRequestDispatcher("index.html"); 
-		    	dispatcher.forward(request, response);
+				response.sendRedirect("index.html");
 			}catch(ParseException el){
 				System.out.println( el);
 			}

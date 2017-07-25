@@ -50,9 +50,10 @@ public class MainControllerServlet extends HttpServlet {
 		if (session == null || session.getAttribute("adminlogin") == null) {
 
 		} else {
-			out.print(" <a href='AddBabyNameForm' class='btn btn-primary' role='button'>Add Baby Name</a> ");
-			out.print(" <a href='LogoutAdmin' class='btn btn-primary' role='button'>Logout</a> ");
-		}
+//			out.print(" <a href='AddBabyNameForm' class='btn btn-primary' role='button'>Add Baby Name</a> ");
+//			out.print(" <a href='LogoutAdmin' class='btn btn-primary' role='button'>Logout</a> ");
+//		
+			}
 
 		EtkinlikDAO et = new EtkinlikDAO();
 		out.println("<h1>ALL EVENTS</h1>");

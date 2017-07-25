@@ -40,13 +40,13 @@ public class ViewEtkinlikTypes extends HttpServlet {
 				out.println("</head>");
 				out.println("<body>");
 				request.getRequestDispatcher("navigation.html").include(request, response);
-				out.print(" <a href='ViewEtkinlikTypes?type=education' class='btn btn-primary' role='button'>Education</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?type=music' class='btn btn-primary' role='button'>Music</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?type=network' class='btn btn-primary' role='button'>Network</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?type=food' class='btn btn-primary' role='button'>Food</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?type=party' class='btn btn-primary' role='button'>Party</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?type=sport' class='btn btn-primary' role='button'>Sport</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?type=art' class='btn btn-primary' role='button'>Art</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?tur=education' class='btn btn-primary' role='button'>Education</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?tur=music' class='btn btn-primary' role='button'>Music</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?tur=network' class='btn btn-primary' role='button'>Network</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?tur=food' class='btn btn-primary' role='button'>Food</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?tur=party' class='btn btn-primary' role='button'>Party</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?tur=sport' class='btn btn-primary' role='button'>Sport</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?tur=art' class='btn btn-primary' role='button'>Art</a> ");
 				
 						
 				out.println("<h1>"+type.toUpperCase()+"</h1>");

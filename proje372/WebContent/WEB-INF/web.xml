@@ -5,25 +5,21 @@
     <display-name>Etkinlik1</display-name>
     <servlet-name>Etkinlik1</servlet-name>
     <servlet-class>controller.MainControllerServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet>
     <display-name>Kullanici</display-name>
     <servlet-name>Kullanici</servlet-name>
     <servlet-class>controller.KullaniciControllerServlet</servlet-class>
-    <load-on-startup>2</load-on-startup>
   </servlet>
   <servlet>
     <display-name>Etkinlik</display-name>
     <servlet-name>Etkinlik</servlet-name>
     <servlet-class>controller.EtkinlikControllerServlet</servlet-class>
-    <load-on-startup>3</load-on-startup>
   </servlet>
   <servlet>
     <display-name>ViewEtkinlikTypes</display-name>
     <servlet-name>ViewEtkinlikTypes</servlet-name>
     <servlet-class>controller.ViewEtkinlikTypes</servlet-class>
-    <load-on-startup>4</load-on-startup>
   </servlet>
   <servlet>
     <display-name>SignUp</display-name>

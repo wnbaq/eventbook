@@ -1,43 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Registration Form</title>
+<title>EVENTBOOK</title>
+<link rel="stylesheet" href="resources/bootstrap.min.css" />
 </head>
 <body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">EVENTBOOK</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="Etkinlik1">EventList</a></li>
+					<li><a href="register.html">Sign In</a></li>
+					<li><a href="login.html">Login</a></li>
+					<li><a href="SigOut">Sign Out</a></li>
+					<li><a href="profil.html">My Profil</a></li>
+					<li><a href="etkinlikRegister.html">Add Event</a></li>
+				</ul>
+
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+
+
 	<h1>Create Your Event!</h1>
-	<form action="Save" method="post">
-		<table cellpadding="3pt">
-			<tr>
-				<td>Event Name :</td>
-				<td><input type="text" name="etkinlikIsmi" size="30" /></td>
-			</tr>
-			<tr>
-				<td>Type:</td>
-				<td><input type="text" name="type" size="30" /></td>
-			</tr>
-			<tr>
-				<td>Start Time :</td>
-				<td><input type="text" name="startTime" size="30" /></td>
-			</tr>
-			<tr>
-				<td>Finish Time :</td>
-				<td><input type="text" name="finishTime" size="30" /></td>
-			</tr>
+	<div class="container">
+		<form style="width: 300px" action="etkinlikRegister" method="post">
+			<div class="form-group">
+				<label for="name1">Event Name :</label> <input type="text"
+					name="etkinlikIsmi" class="form-control" id="name1"
+					placeholder="Name" />
+			</div>
+			<div class="form-group">
+				<label for="startTime1">Start Time :</label> <input type="timestamp"
+					name="startTime" class="form-control" id="startTime1"
+					placeholder="startTime" />
+			</div>
+			<div class="form-group">
+				<label for="finishTime1">Finish Time :</label> <input type="timestamp"
+					name="finishTime" class="form-control" id="finishTime1"
+					placeholder="finishTime" />
+			</div>
 
-			<tr>
-				<td>email :</td>
-				<td><input type="text" name="email" size="30" /></td>
-			</tr>
-			<tr>
-				<td>age range :</td>
-				<td><input type="text" name="ageRange" size="30" /></td>
-			</tr>
+			<div class="form-group">
+				<label for="type1">Type:</label> <select name="tur"
+					class="form-control" id="type1">
+					<option>Education</option>
+					<option>Music</option>
+					<option>Party</option>
+					<option>Sport</option>
+					<option>Network</option>
+					<option>Art</option>
+					<option>Food</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="email1">email :</label> <input type="text" name="email"
+					class="form-control" id="email1" placeholder="email" />
+			</div>
+			<div class="form-group">
+				<label for="ageRange1">age range :</label> <input type="text" name="ageRange"
+					class="form-control" id="email1" placeholder="ageRange" />
+			</div>
+	
 
-		</table>
-		<p />
-		<input type="submit" value="Save" />
-	</form>
+			<p />
+			<input type="submit" value="etkinlikRegister" />
+		</form>
+		</div>
 </body>
 </html>
