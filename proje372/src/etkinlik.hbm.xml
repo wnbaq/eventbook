@@ -8,7 +8,6 @@
 		<property column="baslangic_zamani" name="baslangicZamani" type="java.util.Date" />
 		<property column="bitis_zamani" name="bitisZamani" type="java.util.Date" />
 		<property column="yas_araligi" name="yasAraligi" type="java.lang.String" />
-		<property column="EMAIL" name="email" type="java.lang.String" />
 		<property column="tur" name="type" type="java.lang.String" />
 	</class>
 </hibernate-mapping>

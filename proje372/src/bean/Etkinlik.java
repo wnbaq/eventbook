@@ -3,6 +3,13 @@ package bean;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 public class Etkinlik {
 	private int id;
 	private Date baslangicZamani;
@@ -12,6 +19,7 @@ public class Etkinlik {
 	private Set<Mekan> mekanlar;
 	private String etkinlikIsmi;
 	private String type;
+
 	public int getid() {
 		return id;
 	}
@@ -24,8 +32,8 @@ public class Etkinlik {
 		return baslangicZamani;
 	}
 
-	public void setBaslangicZamani(Date baslangicZamani) {
-		this.baslangicZamani = baslangicZamani;
+	public void setBaslangicZamani(Date baslangicZamani2) {
+		this.baslangicZamani = baslangicZamani2;
 	}
 
 	public Date getBitisZamani() {

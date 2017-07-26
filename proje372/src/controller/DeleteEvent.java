@@ -33,7 +33,7 @@ public class DeleteEvent extends HttpServlet {
 				int id=Integer.parseInt(sid);
 				EtkinlikDAO.delete(id);
 				
-				response.sendRedirect("Etkinik1");
+				response.sendRedirect("etkinlikList");
 				
 			}
 

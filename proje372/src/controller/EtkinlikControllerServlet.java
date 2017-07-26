@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Etkinlik;
 import dao.EtkinlikDAO;
 @WebServlet("/Etkinlik")
 public class EtkinlikControllerServlet extends HttpServlet {
@@ -35,18 +36,18 @@ public class EtkinlikControllerServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		try {
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			Etkinlik e=new Etkinlik();
+			e.setBaslangicZamani(formatter.parse(startTime));
+			e.setBitisZamani(formatter.parse(finishTime));
+			e.setEmail(email);
+			e.setEtkinlikIsmi(etkinlikIsmi);
+			e.setYasAraligi(ageRange);
+			e.setType(tur);
 			EtkinlikDAO eventDAO = new EtkinlikDAO();
-			DateFormat df =new SimpleDateFormat("dd-mm-yyyy");
-			Date sdate=null;
-			Date fdate=null;
-			try{
-				sdate=df.parse(startTime);
-				fdate=df.parse(finishTime);
-				eventDAO.createEtkinlik(etkinlikIsmi, sdate, fdate, ageRange, email, tur);
-				response.sendRedirect("index.html");
-			}catch(ParseException el){
-				System.out.println( el);
-			}
+			
+			eventDAO.createEtkinlik(e);
+			response.sendRedirect("index.html");
 
 
 

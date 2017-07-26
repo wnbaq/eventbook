@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>EventBook</display-name>
+    <servlet>
+    <display-name>Kullanici</display-name>
+    <servlet-name>Kullanici</servlet-name>
+    <servlet-class>controller.KullaniciControllerServlet</servlet-class>
+  </servlet>
   <servlet>
     <display-name>Etkinlik1</display-name>
     <servlet-name>Etkinlik1</servlet-name>
     <servlet-class>controller.MainControllerServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <display-name>Kullanici</display-name>
-    <servlet-name>Kullanici</servlet-name>
-    <servlet-class>controller.KullaniciControllerServlet</servlet-class>
   </servlet>
   <servlet>
     <display-name>Etkinlik</display-name>
@@ -41,10 +41,6 @@
   <servlet-mapping>
     <servlet-name>Etkinlik1</servlet-name>
     <url-pattern>/etkinlikList</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>SignUp</servlet-name>
-    <url-pattern>/signup</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

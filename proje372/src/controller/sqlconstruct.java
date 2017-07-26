@@ -20,7 +20,12 @@ public class sqlconstruct {
 		String make2="CREATE TABLE IF NOT EXISTS uye(id int REFERENCES kullanici(id),isim varchar(50) NOT NULL,soyisim varchar(50) NOT NULL,parola varchar(50) NOT NULL,email varchar(50) NOT NULL)";
 		String make3="CREATE TABLE IF NOT EXISTS yonetici(id int REFERENCES kullanici(id),isim varchar(50) NOT NULL,soyisim varchar(50) NOT NULL,parola varchar(50) NOT NULL,email varchar(50) NOT NULL)";
 		String make4="CREATE TABLE IF NOT EXISTS mekan(m_id SERIAL NOT NULL PRIMARY KEY,mekan_ismi varchar(50) NOT NULL,mekan_sahibi varchar(50) NOT NULL,il varchar(50) NOT NULL,ilce varchar(50) NOT NULL,kapasite varchar(50) NOT NULL,telefon varchar(50) NOT NULL)";
-		String make5="CREATE TABLE IF NOT EXISTS etkinlik(e_id SERIAL NOT NULL PRIMARY KEY,etkinlik_ismi varchar(100) NOT NULL,baslangic_zamani date NOT NULL,bitis_zamani date NOT NULL,yas_araligi varchar(50) NOT NULL,tur varchar(50) NOT NULL, m_id int REFERENCES mekan(m_id))";
+		String make5="CREATE TABLE IF NOT EXISTS "
+				+ "etkinlik(e_id SERIAL NOT NULL PRIMARY KEY,"
+				+ "etkinlik_ismi varchar(100) NOT NULL,"
+				+ "baslangic_zamani varchar(100) ,"
+				+ "bitis_zamani varchar(100) ,"
+				+ "yas_araligi varchar(50) ,tur varchar(50) NOT NULL)";
 		
 		
 		String make6="CREATE TABLE IF NOT EXISTS networking(e_id int REFERENCES etkinlik(e_id),baslangic_zamani date NOT NULL,bitis_zamani date NOT NULL,yas_araligi varchar(50) NOT NULL,m_id int REFERENCES mekan(m_id))";

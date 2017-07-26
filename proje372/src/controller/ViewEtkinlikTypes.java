@@ -31,7 +31,7 @@ public class ViewEtkinlikTypes extends HttpServlet {
 				response.setContentType("text/html");
 				PrintWriter out=response.getWriter();
 				String type=request.getParameter("type");
-				
+				//System.out.println(type);
 				out.println("<!DOCTYPE html>");
 				out.println("<html>");
 				out.println("<head>");
@@ -40,23 +40,23 @@ public class ViewEtkinlikTypes extends HttpServlet {
 				out.println("</head>");
 				out.println("<body>");
 				request.getRequestDispatcher("navigation.html").include(request, response);
-				out.print(" <a href='ViewEtkinlikTypes?tur=education' class='btn btn-primary' role='button'>Education</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?tur=music' class='btn btn-primary' role='button'>Music</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?tur=network' class='btn btn-primary' role='button'>Network</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?tur=food' class='btn btn-primary' role='button'>Food</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?tur=party' class='btn btn-primary' role='button'>Party</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?tur=sport' class='btn btn-primary' role='button'>Sport</a> ");
-				out.print(" <a href='ViewEtkinlikTypes?tur=art' class='btn btn-primary' role='button'>Art</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?type=Education' class='btn btn-primary' role='button'>Education</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?type=Music' class='btn btn-primary' role='button'>Music</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?type=Network' class='btn btn-primary' role='button'>Network</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?type=Food' class='btn btn-primary' role='button'>Food</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?type=Party' class='btn btn-primary' role='button'>Party</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?type=Sport' class='btn btn-primary' role='button'>Sport</a> ");
+				out.print(" <a href='ViewEtkinlikTypes?type=Art' class='btn btn-primary' role='button'>Art</a> ");
 				
 						
 				out.println("<h1>"+type.toUpperCase()+"</h1>");
 				List<Etkinlik> list=EtkinlikDAO.getRecordsByType(type);
 				
 				out.print("<table class='table table-bordered table-striped'>");
-				out.println("<tr><th>Id</th><th>Event Name</th><th>Type</th><th>Email</th><th>Age Rank</th></tr>");
+				out.println("<tr><th>Id</th><th>Event Name</th><th>Type</th><th>Age Rank</th></tr>");
 				for(Etkinlik b:list){
 					out.println("<tr><td>"+b.getid()+"</td><td>"+b.getEtkinlikIsmi
-							()+"</td><td>"+b.getType()+"</td><td>"+b.getEmail()+"</td><td>"+b.getYasAraligi()+"</td></tr>");
+							()+"</td><td>"+b.getType()+"</td><td>"+b.getYasAraligi()+"</td></tr>");
 				}
 				out.println("</table>");
 				out.close();

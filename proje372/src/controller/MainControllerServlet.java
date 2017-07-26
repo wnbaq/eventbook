@@ -38,13 +38,13 @@ public class MainControllerServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		request.getRequestDispatcher("navigation.html").include(request, response);
-		out.print(" <a href='ViewEtkinlikTypes?type=education' class='btn btn-primary' role='button'>Education</a> ");
-		out.print(" <a href='ViewEtkinlikTypes?type=music' class='btn btn-primary' role='button'>Music</a> ");
-		out.print(" <a href='ViewEtkinlikTypes?type=network' class='btn btn-primary' role='button'>Network</a> ");
-		out.print(" <a href='ViewEtkinlikTypes?type=food' class='btn btn-primary' role='button'>Food</a> ");
-		out.print(" <a href='ViewEtkinlikTypes?type=party' class='btn btn-primary' role='button'>Party</a> ");
-		out.print(" <a href='ViewEtkinlikTypes?type=sport' class='btn btn-primary' role='button'>Sport</a> ");
-		out.print(" <a href='ViewEtkinlikTypes?type=art' class='btn btn-primary' role='button'>Art</a> ");
+		out.print(" <a href='ViewEtkinlikTypes?type=Education' class='btn btn-primary' role='button'>Education</a> ");
+		out.print(" <a href='ViewEtkinlikTypes?type=Music' class='btn btn-primary' role='button'>Music</a> ");
+		out.print(" <a href='ViewEtkinlikTypes?type=Network' class='btn btn-primary' role='button'>Network</a> ");
+		out.print(" <a href='ViewEtkinlikTypes?type=Food' class='btn btn-primary' role='button'>Food</a> ");
+		out.print(" <a href='ViewEtkinlikTypes?type=Party' class='btn btn-primary' role='button'>Party</a> ");
+		out.print(" <a href='ViewEtkinlikTypes?type=Sport' class='btn btn-primary' role='button'>Sport</a> ");
+		out.print(" <a href='ViewEtkinlikTypes?type=Art' class='btn btn-primary' role='button'>Art</a> ");
 
 		HttpSession session = request.getSession(false);
 		if (session == null || session.getAttribute("adminlogin") == null) {
@@ -62,7 +62,7 @@ public class MainControllerServlet extends HttpServlet {
 		out.println("<tr><th>Start Time</th><th>Finish Time</th><th>Event Name</th><th>Type</th><th>Email</th><th>Age Rank</th></tr>");
 		for (Etkinlik b : list) {
 			out.println("<tr><td>" + b.getBaslangicZamani() + "</td><td>" + b.getBitisZamani() + "</td><td>"
-					+ b.getEtkinlikIsmi() + "</td><td>" + b.getType() + "</td><td>" + b.getEmail() + "</td><td>"
+					+ b.getEtkinlikIsmi() + "</td><td>" + b.getType() + "</td><td>"
 					+ b.getYasAraligi() + "</td></tr>");
 
 			out.println("<td><a href='DeleteEvent?id=" + b.getid() + "'>Delete Event</a></td>");
