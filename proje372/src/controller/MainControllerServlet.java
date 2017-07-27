@@ -46,26 +46,21 @@ public class MainControllerServlet extends HttpServlet {
 		out.print(" <a href='ViewEtkinlikTypes?type=Sport' class='btn btn-primary' role='button'>Sport</a> ");
 		out.print(" <a href='ViewEtkinlikTypes?type=Art' class='btn btn-primary' role='button'>Art</a> ");
 
-		HttpSession session = request.getSession(false);
-		if (session == null || session.getAttribute("adminlogin") == null) {
-
-		} else {
-//			out.print(" <a href='AddBabyNameForm' class='btn btn-primary' role='button'>Add Baby Name</a> ");
-//			out.print(" <a href='LogoutAdmin' class='btn btn-primary' role='button'>Logout</a> ");
-//		
-			}
+	
 
 		EtkinlikDAO et = new EtkinlikDAO();
 		out.println("<h1>ALL EVENTS</h1>");
 		List<Etkinlik> list = et.listEtkinlik();
 		out.print("<table class='table table-bordered table-striped'>");
-		out.println("<tr><th>Start Time</th><th>Finish Time</th><th>Event Name</th><th>Type</th><th>Email</th><th>Age Rank</th></tr>");
+		out.println("<tr><th>Start Time</th><th>Finish Time</th><th>Event Name</th><th>Age Rank</th><th>Type</th></tr>");
 		for (Etkinlik b : list) {
 			out.println("<tr><td>" + b.getBaslangicZamani() + "</td><td>" + b.getBitisZamani() + "</td><td>"
-					+ b.getEtkinlikIsmi() + "</td><td>" + b.getType() + "</td><td>"
-					+ b.getYasAraligi() + "</td></tr>");
+					+ b.getEtkinlikIsmi() + "</td><td>" + b.getYasAraligi() + "</td><td>"
+					+ b.getType() + "</td></tr>");
 
+			
 			out.println("<td><a href='DeleteEvent?id=" + b.getid() + "'>Delete Event</a></td>");
+			System.out.println(b.getid());
 			//out.println("<td><a href='etkinlikRegister'>+ "Add Event</a></td>");
 			out.println("</tr>");
 		}

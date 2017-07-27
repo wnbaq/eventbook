@@ -2,14 +2,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Profil</title>
-<div class="profile clearfix">
-              <div class="profile_info">
-                <span>EVENTBOOK</span>
-              
-              </div>
+<title>EVENTBOOK</title>
+<link rel="stylesheet" href="resources/bootstrap.min.css" />
+<style>
+div.box {
+	width: 250px;
+	border: 1px solid pink;
+	padding: 20px;
+	float: left
+}
+</style>
 </head>
+
 <body>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -33,7 +37,7 @@
 					<li><a href="Etkinlik1">EventList</a></li>
 					<li><a href="register.html">Sign In</a></li>
 					<li><a href="login.html">Login</a></li>
-					<li><a href="sigout.html">Sign Out</a></li>
+				
 					<li><a href="profil.html">My Profil</a></li>
 					<li><a href="eventRegister.html">Add Event</a></li>
 				</ul>
@@ -43,26 +47,9 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-<input id="consumer-header-event-search" name="q" type="text" class="js-query-input ui-autocomplete-input" placeholder="Search events or categories" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-autocomplete="list" role="textbox" aria-haspopup="true">
-<input id="consumer-header-event-location" name="loc" type="text" class="js-location-input ui-autocomplete-input" placeholder="City or location" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="İstanbul, Turkey" aria-autocomplete="list" role="textbox" aria-haspopup="true">
-<select id="consumer-header-date-range" name="date" class="js-d-select-box" dorsal-guid="dd7c621d-4eeb-aeec-c5af-40a20e6d90bd" data-xd-wired="select-box">
-                        <option value="" selected="selected">All Dates</option>
-                        <option value="today">Today</option>
-                        <option value="tomorrow">Tomorrow</option>
-                        <option value="this_week">This Week</option>
-                        <option value="this_weekend">This Weekend</option>
-                        <option value="next_week">Next Week</option>
-                        <option value="next_month">Next Month</option>
-                    </select>
-<input type="submit" class="js-home-search-btn btn btn--brite btn--block hide-small js-xd-janus-checkpoint-link" value="Search" data-checkpoint-name="homepage_search_submitted">
-<h2 class="text-heading-primary l-mar-top-2">
-                ADMIN
-            </h2>
-<form align="right" name="form1" method="post" action="log_out.php">
-  <label class="logoutLblPos">
-  <input name="submit2" type="submit" id="submit2" value="log out">
-  </label>
 </form>            
 <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=tr.islamic%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tr.turkish%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Europe%2FIstanbul" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </body>
+	<script src="resources/jquery.min.js"></script>
+	<script src="resources/bootstrap.min.js"></script>
 </html>

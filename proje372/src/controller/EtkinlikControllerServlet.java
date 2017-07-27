@@ -36,7 +36,7 @@ public class EtkinlikControllerServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Etkinlik e=new Etkinlik();
 			e.setBaslangicZamani(formatter.parse(startTime));
 			e.setBitisZamani(formatter.parse(finishTime));

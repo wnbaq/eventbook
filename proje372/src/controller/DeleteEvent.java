@@ -30,6 +30,7 @@ public class DeleteEvent extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 				String sid=request.getParameter("id");
+				
 				int id=Integer.parseInt(sid);
 				EtkinlikDAO.delete(id);
 				

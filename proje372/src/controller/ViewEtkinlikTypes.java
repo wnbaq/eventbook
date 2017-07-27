@@ -53,10 +53,10 @@ public class ViewEtkinlikTypes extends HttpServlet {
 				List<Etkinlik> list=EtkinlikDAO.getRecordsByType(type);
 				
 				out.print("<table class='table table-bordered table-striped'>");
-				out.println("<tr><th>Id</th><th>Event Name</th><th>Type</th><th>Age Rank</th></tr>");
+				out.println("<tr><th>Id</th><th>Event Name</th><th>Age Rank</th><th>Type</th></tr>");
 				for(Etkinlik b:list){
 					out.println("<tr><td>"+b.getid()+"</td><td>"+b.getEtkinlikIsmi
-							()+"</td><td>"+b.getType()+"</td><td>"+b.getYasAraligi()+"</td></tr>");
+							()+"</td><td>"+b.getYasAraligi()+"</td><td>"+b.getType()+"</td></tr>");
 				}
 				out.println("</table>");
 				out.close();

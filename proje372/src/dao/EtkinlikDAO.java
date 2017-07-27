@@ -108,7 +108,8 @@ public class EtkinlikDAO {
 				b.setEtkinlikIsmi(rs.getString(2));
 				b.setBaslangicZamani(rs.getTimestamp(3));
 				b.setBitisZamani(rs.getTimestamp(4));
-				b.setYasAraligi(rs.getString(6));
+				b.setYasAraligi(rs.getString(5));
+				b.setType(rs.getString(6));
 				list.add(b);
 			}
 			con.close();
@@ -122,12 +123,11 @@ public class EtkinlikDAO {
 		int status = 0;
 		try {
 			Connection con = getCon();
-			PreparedStatement ps = con.prepareStatement("delete from etkinlik where id=?");
-			ps.setInt(1, id);
+			PreparedStatement ps = con.prepareStatement("delete from etkinlik where e_id="+id);
 			status = ps.executeUpdate();
 			con.close();
 		} catch (Exception e) {
-			System.out.println("hello"+e);
+			System.out.println(e);
 		}
 		return status;
 	}
